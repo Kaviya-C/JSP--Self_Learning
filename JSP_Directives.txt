@@ -1,0 +1,47 @@
+Directives tells the web container how to translate the jsp page into the corressponding servlet
+
+three Directives:
+         page
+         include
+         taglib
+
+page   -- <%@page import="java.sql.Connection" %>
+
+above is the example for page Directives
+the allowed attribute for page Directives are:
+         import     -- as like java import statement
+         extends    -- extends the parent class
+         info       -- getting servlet information using getServletInfo() 
+         buffer      -- used to mention the size in kilobytes by default it is 8KB 
+         isThreadSafe  -- servlet and jsp is multithreaded support
+         if we want to make thread safe then isThreadSafe make as true then only one thread can able to give request and after sending response other request are allowed 
+         isELIgnored     -- by default it it false
+         that means expression language is enabled by default if u make as true then u disable the expression language
+         pageEncoding        -- this will set the ascii type charset 8 like that
+         contentType    -- this is http header how the content should be received (text/html is by default)
+         session 
+         language  --- by default  it is java
+         we can mention any scripting programming language
+         errorPage   -- this is used to mention if this error occur navigate to this page that page details we have to given in error page
+         isErrorPage   by making this as true then current error page will tells what exact error:
+             exception.printStackTrace(response.getWriter())
+
+
+include Directives
+<%@include file="header.html"%>
+
+this will include the content of another resources it may be html jsp or servlet
+this is static resources
+this will happen at page translation time
+
+
+
+taglib Directives
+
+<%@taglib uri="" prefix=""%>
+
+this is used to represent the custom tags
+create or find the custom tag
+describe them in tag library descriptor
+uri --    url address
+prefix -- this is shortname or nickname to use this as references
