@@ -1,0 +1,91 @@
+
+implicit object is one of the features in jsp
+
+this will reduce the line of the code
+
+SERVLET                    JSP
+
+HttpServletRequest  --     request
+HttpservletResponse --     response
+PrintWriter         --     out
+ServletContext      --     application 
+ServletConfig       --     config
+PageContext         --     pageContext 
+Object              --     page
+HttpSession         --     HttpSession
+java.lang.Exception --     exception (throwable)
+
+
+pageContext  --- page scope
+                 application scope
+                 request scope
+                 session scope
+       default -- page scope
+
+
+it take 3 arguments;     
+parameter name : parameter value : PageContext.SESSION_SCOPE 
+
+
+INDEX.JSP
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>main</title>
+</head>
+<body>
+
+<form action="pageContext.jsp">
+<pre>
+Enter Name: <input type="text" name="username">
+
+        <input type="submit" value="GO">
+</pre>
+</form>
+</body>
+</html>
+
+
+
+
+NEXT PAGE ____IMPLEMENTED PageContext IMPLICIT Object
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+String name = request.getParameter("username");
+pageContext.setAttribute("user", name,PageContext.SESSION_SCOPE);
+%>
+<%= pageContext.getAttribute("user",PageContext.SESSION_SCOPE) %>
+<a href="next.jsp">Next Page</a>
+</body>
+</html>
+
+
+RETRIEVE THAT IMPLICIT OBJECT IN NEXT PAGE:
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%= pageContext.getAttribute("user",PageContext.SESSION_SCOPE) %>
+
+</body>
+</html>
