@@ -1,0 +1,83 @@
+Java Server Page  -----> JSP
+
+Jsp  is used to create dynamic web applications just like servlet Technology.
+
+JSP is the extension to Servlet..
+Because it provide more functionality  such as expression language,JSTL etc
+
+Jsp consists of HTML tags and JSP tags
+Easy to maintain than servlet
+bcoz we can seperate businees logic and presentation logic in Jsp
+
+Merits:
+Faster Development ------> if we done any changes in the code we don't need to recompile and redeploy the project..but in servlet we have to update and recompile if we want to change the look and feel of the websites
+
+Easy to Maintain ----> we can writer html tags and jsp tags seperately
+
+
+Less code than servlet ----> JSP has implicit object so instead of writting 
+
+SERVLET:
+PrintWriter out = response.getWriter();
+out.println("Hello world")
+
+JSP
+out.println("Hello world");
+Here --> out is an implicit object in jsp ...
+
+
+Extension to the servlet -----> jsp is the extension to the servlet ,whatever the features present in servlet that can be used in jsp too .additionally jsp have come features such as implicit object,Custom tags,JSTL,Expression language etc
+
+
+LIFE CYCLE OF JSP:
+            Jsp page is converted as servlet
+            TRANSLATION AS SERVLET
+            servlet is compiled into bytecode
+            COMPILATION SERVLET
+            class file is loaded into the memory
+            LOADED INTO MEMORY
+            .class file is generated and servlet object is created
+            INSTANTIATION OF SERVLET class
+            jspinit() is called only once by web container
+            INIITIALIZATION OF SERVLET
+            _jspservice()  is called for each request
+            REQUEST PREOCESSION--SERVICE METHOD IS INVOKED 
+            jspdestroy() is called at the end 
+            DESTRUCTION OF SERVLET
+
+
+SAMPLE DEMO JSP FILE:
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+
+out.println("Hey this is kaviya");
+
+%>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
