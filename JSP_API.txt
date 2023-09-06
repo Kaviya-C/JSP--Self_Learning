@@ -1,0 +1,32 @@
+JSP contains two package
+                  javax.servlet.jsp  -- 2 interfaces and 6 classes
+                  javax.servlet.jsp.tagext -- custom tags
+
+ javax.servlet.jsp
+      Interfaces:
+
+           JspPage
+           HttpJspPage
+      
+      Classes:
+          JspWriter
+          JspFactory
+          JspEngineInfo
+          PageContext
+          JspError
+          JspException
+
+ JspPage ---> it is an interface
+               it extends servlet interface
+               it provides two life cycle methods:
+
+               jspinit()
+               jspdestroy() 
+
+HttpJspPage ---> it is an interface
+                 it extends JspPage interface
+                 JspPage extends servlet interface
+                 it provide one methods
+                 _jspservice()
+                 this underscore tells as as we cannot override
+                 used to process the request
