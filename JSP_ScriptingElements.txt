@@ -1,0 +1,47 @@
+The scripting elements in jsp provides some addition information the jsp page
+
+there are three types of scripting elements:
+             scriptlet tag ---    <%   %>
+             Expression tag ---   <%=  %>
+             Declaration tag ---  <%!  %>
+
+
+scriptlet tag 
+we can write java code inside of this tag
+EG:
+<%
+String name = request.getParameter("name");
+//we can assign only variable not methods
+out.println("Welcome "+name);
+// this  <% is called scriptlet tag 
+%>
+
+
+Expression tag
+we can write any statement whatever we write inside of this tag that is directly displayed into the browser
+without using of out.println statement
+used to write the output stream of the response
+mostly used to print the values of variables and methods using expression tag
+EG:
+<%= "Hey this is expression tag" %>
+
+
+
+Declaration tag
+used to declare methods and variables
+<%! int a=10 %>
+<%! int sum(a,b)
+  return a+b;
+%>
+EG:
+<%! int a =10; %>
+
+
+difference between scriptlet and Declaration tag
+in scriptlet tag we can declare only variable not methods
+we can place scriptlet tag inside of _jspservice() 
+
+
+
+in Declaration tag we can declare variable and methods
+we cannot place this declaraion tag inside of _jspservice() method
